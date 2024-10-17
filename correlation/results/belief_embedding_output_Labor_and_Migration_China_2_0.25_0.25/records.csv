@@ -1,0 +1,2 @@
+dataset,semi_cnt_0,semi_cnt_1,num_assertion,seed,edge_guidance,axis_guidance,running_time,accuracy,macro_f1,average_purity
+datasets/Labor_and_Migration_China.csv,6,13,121,0,True,True,3.9839417934417725,0.8125,0.8117647058823529,0.8174603174603174

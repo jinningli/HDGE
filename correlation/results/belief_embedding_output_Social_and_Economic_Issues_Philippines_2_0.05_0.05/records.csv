@@ -1,0 +1,2 @@
+dataset,semi_cnt_0,semi_cnt_1,num_assertion,seed,edge_guidance,axis_guidance,running_time,accuracy,macro_f1,average_purity
+datasets/Social_and_Economic_Issues_Philippines.csv,12,10,608,1,True,True,4.671133756637573,0.9479166666666666,0.9434429126899966,0.9531024531024531

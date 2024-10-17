@@ -1,0 +1,2 @@
+dataset,semi_cnt_0,semi_cnt_1,num_assertion,seed,edge_guidance,axis_guidance,running_time,accuracy,macro_f1,average_purity
+datasets/United_States_Military_Philippine.csv,20,20,309,7,True,True,5.448292016983032,0.7777777777777778,0.7107142857142856,0.6944444444444444

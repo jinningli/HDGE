@@ -1,0 +1,2 @@
+dataset,semi_cnt_0,semi_cnt_1,num_assertion,seed,edge_guidance,axis_guidance,running_time,accuracy,macro_f1,average_purity
+datasets/Crime.csv,14,34,296,0,True,True,3.874209403991699,0.8913043478260869,0.8626865671641792,0.8725490196078431
