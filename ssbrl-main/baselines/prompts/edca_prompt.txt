@@ -1,0 +1,68 @@
+Given a set of tweet, independently determine if of each of them expresses a supportive or opposing view towards the topic on Enhanced Defense Cooperation Agreement (EDCA). The Enhanced Defense Cooperation Agreement (EDCA) is an agreement between the United States and the Philippines intended to bolster the American–Philippine alliance. Classify the sentiment as either "supportive" (for all tweets that are pro-Philippines or Pro its allies including the United States, or those that are anti-China) or "opposing" (tweets that are anti-philippines or Pro-China). In the very rare case there will be "netural" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 1412874109381: RT @GordianKnotRay “The 🇺🇸United States stands with The 🇵🇭#Philippines in the face of the People’s Republic of 🇨🇳#China Coast Guard’s continued infringement upon freedom of navigation in the #SouthChinaSea…We call upon Beijing to desist from its provocative and unsafe conduct.” — @StateDeptSpox https://t.co/3I8n829W2d",
+
+This tweet has positive (pro) sentiment on EDCA because it is againt Chinese military and political invasion in Philippines, which aligns with the purpose of EDCA (Enhanced Defense Cooperation Agreement) that supports US-Philippines alliance. So the output is:
+{
+    ID: 1412874109381,
+    Sentiment: supportive
+}
+
+Tweet 141239233123: 
+RT @Richeydarian This is BIG! Just weeks after MARCOS Jr. visit to CHINA, which produced no clear breakthrough, the philippines is not only implememting EDCA, but has now likely agreed to US access to key bases near TAIWAN! Huge geopolitical implications…
+
+This tweet has positive (pro) sentiment on EDCA. So the output is
+{
+    ID: 141239233123,
+    Sentiment: supportive
+}
+
+Tweet 5438491410209:
+RT @KrstnnBonVoyage Not blaming any Presidents. But the idea of EDCA in the Philippines shouldn’t have happened to begin with. Why? It doesn’t take a genius to understand this. 
+
+This tweet has negative (anti) sentiment on EDCA.
+{
+    ID: 5438491410209,
+    Sentiment: opposing
+}
+
+Tweet 3543190491230:
+RT @Richeydarian As I wrote back in 2019, the key Philippine bases as far as the Taiwan crisis is concerned are far to the north, namely in Fuga and Mavulis, which are NOT part of the EDCA bases, so far. https://t.co/TPukXHiC64
+
+This tweet has negative (anti) sentiment on EDCA.
+{
+    ID: 3543190491230,
+    Sentiment: supportive
+}
+
+
+Tweet 3543190492230:
+RT @Kanthan2030 In the Philippines, the President’s sister - who is also a Senator - warns against getting trapped in the U.S.-China rivalry. The US wants to turn Filipinos into Asia’s Ukrainians — sacrificial pawns in a future war against Beijing. https://t.co/DKkgivb6Iv
+
+This tweet has negative (anti) sentiment on EDCA.
+{
+    ID: 3543190492230,
+    Sentiment: opposing
+}
+
+Now, it's your turn.

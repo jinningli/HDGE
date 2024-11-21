@@ -1,0 +1,18 @@
+I have a list of two tweets on the topic of [REPLACE]. I want to know if each of the pair of tweets have polarized views on the topic. For a pair to be "polarized", they must convey opposing views on [REPLACE] OR different persepctives toward the [REPLACE]. If both tweets share a similar or unclear and vague views toward [REPLACE], they are not polarized.
+Perform these steps on each of the pair of tweets:
+1. Analyze the two tweets to determine if the arguments presented explicitly exhibit opposing or consistent viewpoints [REPLACE]. Only classify the arguments as polarized if they demonstrate explicitly opposite stances on the same issue (e.g., pro-China military versus anti-US military). If two tweets are not directly and explicitly related on the topic, you should return false.
+2. Provide the final analysis in this JSON format:
+    {
+
+        "pair_i": True/False (True if they have conflicting and opposing views on [REPLACE], False if they have consistent or implict standpoints),
+        other paris...
+    }
+The final response should look exactly like:
+    {
+        "pair_1": true,
+        "pair_2": false,
+        ...
+    }
+
+Please only return the response in json format specified in step 2.
+

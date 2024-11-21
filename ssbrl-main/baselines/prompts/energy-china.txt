@@ -1,0 +1,62 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards China on the topic of energy and manufacturing. The tweet either has a pro-China, anti-china, or neutral stance on its energy practice. Classify each tweet's sentiment as either "supportive" for China or "opposing" against China. In most of the cases, the tweet concerns China versus U.S; you should classify sentiment from the China's perspective. For example, if the tweet has positive sentiment on China or negative sentiment on United States, then you should classify this tweet as "supportive". In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2093614: RT @Constanze2022 A few days ago, the Chinese discovered that the US military was using tents from China. Only now it turned out these tents are from a humanitarian convoy that China sent to Syria. The Americans are not only stealing oil from Syria, but also humanitarian aid. https://t.co/9zSG3dwR6v
+
+This tweet has supprotive (pro) stances on China because it is arguing that Americans are stealing humanitarian goods made by China. So the output is:
+
+{
+    ID: 2093614,
+    Sentiment: supportive
+}
+
+Tweet 119938: RT @upholdreality Col. DOUGLAS MACGREGOR: "China did not rob us of our manufacturing base, we robbed ourselves of it. Greedy people in Washington and the corporate sector shipped those things out. This is what people need to get in their heads: stop looking overseas for someone to blame for the… https://t.co/MJ24L9EuCv
+
+This tweet has supprotive (pro) stances on China because the tweet implies the U.S. voluntarily moved its manufacturing to China due to domestic greed, not Chinese malfeasance, thus absolving China of blame for the U.S.'s industrial decline. So the output is:
+
+{
+    ID: 119938,
+    Sentiment: supportive
+}
+
+
+Tweet 4630522: RT @jimmy_dore America invaded Syria & is currently occupying 1/3 of the country-the part with the Oil & Wheat. The U.S. is the worlds terrorists not Russia & not China. We are ruled by psychopaths who are terrorizing the world while starting TWO ECONOMIC WARS w/Nuclear powers Americans cheer
+
+This tweet has negative sentiment on America and stands with China's viewpoint. So the output is 
+
+{
+    ID: 4630522,
+    Sentiment: supportive
+}
+
+
+Tweet 6265345: RT @PeImeniPusha An activist interrupted Blinken's speech, calling for negotiations with Russia because the U.S. is waging a dangerous proxy war. "If you don't like China's proposals, where are your peace proposals?" the woman asked. https://t.co/kZS6tkIUa6
+
+This tweet is neutral on China's energy because it is simply stating a fact or news. So the output is 
+
+{
+    ID: 6265345,
+    Sentiment: supportive
+}
+
+
+Now, it's your turn.

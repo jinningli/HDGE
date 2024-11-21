@@ -1,0 +1,72 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the current Philippine president Bongbong Marcos. Note that, since taking office, Marcos has governed with relative moderation, repairing relations and building an alliance with the United States, pulling back on Duterte’s brutal drug war and persecution of critics, and restoring a sense of bureaucratic stability and normalcy. Classify each tweet's sentiment as either "supportive" or "opposing". Note that if a tweet has positive comments on Marcos or his policy, you should classify it as "supportive", and vice versa. In the very rare case, there will be "neutral" views.The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 1536584: RT @bilyonaryo_ph A retired international investment banker has sounded the alarm on the absence of clear guidelines in the bill creating the Maharlika Investment Fund, which is awaiting President Ferdinand Marcos Jr.'s signature. #BilyonaryoMoney https://t.co/xGyKOvFoGJ
+
+This tweet has opposing (anti) stances on Marcos because it is expressing negative sentiments on the Maharlika Investment Fund, which is proposed and launched by Marcos. So the output is:
+
+{
+    ID: 1536584,
+    Sentiment: opposing
+}
+
+
+Tweet 2916892: RT @datumx11 PSA: This January tumaas ang bilang ng WALANG trabaho. Marcos Jr: Many Filipinos have joined the labor force. Will you believe someone who has a history of propagating lies?
+
+This tweet has opposing (anti) stances and views on Marcos because it is calling him "someone who has a history of propagating lies." So the output is:
+
+{
+    ID: 2916892,
+    Sentiment: opposing
+}
+
+
+Tweet 4155512: RT öPTVH SOORIN: Sen. Imee Marcos wanted to investigate the lack of onion supply.istic via Bernard Jaudian 1/2 hatps://t.co/LWhqa38XC
+
+This tweet has supportive stances on Marcos becuase it mentions that Marcos is tackling an issue in Philippine. The output is:
+
+{
+    ID: 4155512,
+    Sentiment: supportive
+}
+
+
+Tweet 3436635: RT @theadtan Sorry to burst your bubble but the Philippines' GDP skyrocketed during the Marcos regime except from 1981 to 1983 (because of the global economic recession from 1981-1983). FM started with a yearly salary of Php40k per annum (1965), Php54k in 1970, Php170k in 1975, Php450k in… https://t.co/x50JduxSBi
+
+This tweet has supportive stances on Marcos becuase it recognizes Marcos's contribution to philippines' economics. The output is:
+
+{
+    ID: 3436635,
+    Sentiment: supportive
+}
+
+
+Tweet 6429170: RT @meettheearthorg Meet Lapu Lapu, 𝘁𝗵𝗲 𝗺𝗮𝗻 𝘄𝗵𝗼 𝗸𝗶𝗹𝗹𝗲𝗱 𝗠𝗮𝗴𝗲𝗹𝗹𝗮𝗻 𝗮𝗻𝗱 𝗽𝗼𝘀𝘁𝗽𝗼𝗻𝗲𝗱 𝘁𝗵𝗲 𝗣𝗵𝗶𝗹𝗶𝗽𝗽𝗶𝗻𝗲𝘀 𝗰𝗼𝗹𝗼𝗻𝗶𝘇𝗮𝘁𝗶𝗼𝗻 by more than 40 years! Do you know the real story of this filipino hero... who may have been actually Malay?https://t.co/6w5rUJjnVw
+
+This tweet has neutral stances on Marcos becuase it does not mention anything (like projects, policies, etc) directly related to Marcos. The output is:
+
+{
+    ID: 6429170,
+    Sentiment: neutral
+}
+
+Now, it's your turn.

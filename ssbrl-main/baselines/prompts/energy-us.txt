@@ -1,0 +1,61 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the United States on the topic of energy, manufacturing, or military. The tweet either has a pro-US, anti-US, or neutral stance on its energy, manufacturing, or military practice. In most of the cases, the tweet concerns U.S. versus China and Russia; you should classify sentiment from the U.S's perspective. For example, if the tweet has positive sentiment on U.S. or negative sentiment on Russia and China, then you should classify this tweet as "supportive", and vice versa. Keep in mind the United States' alliance with the Philippine, Japan, and Ukraine in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @upholdreality Col. DOUGLAS MACGREGOR: "China did not rob us of our manufacturing base, we robbed ourselves of it. Greedy people in Washington and the corporate sector shipped those things out. This is what people need to get in their heads: stop looking overseas for someone to blame for the… https://t.co/MJ24L9EuCv
+
+This tweet has negative sentiment on U.S because it is blaming U.S for its loss of jobs and manufacturing bases. So the output is 
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+
+Tweet 1241329: RT @KimDotcom BREAKING: The US Congress oversight committee presents "new evidence of Biden family influence peddling" with large payments from middlemen who received money from Chinese entities for the Bidens. The US President, a money laundering pipeline terrorist and proxy war aficionado? https://t.co/wzxxkjp4dj
+
+This tweet has negative sentiment on U.S because it is blaming U.S and its president for corruption. So the output is 
+
+{
+    ID: 1241329,
+    Sentiment: opposing
+}
+
+Tweet 7841341: RT @BreitbartNews A group of eight House Republicans joined the majority of Democrats to support Biden’s suspension of United States tariffs on suspected China-made solar panels. https://t.co/uZZWrNOeHJ
+
+This tweet has relatively positive sentiment on U.S for how Republicans is supporting the democratic U.S president. So the output is 
+
+{
+    ID: 7841341,
+    Sentiment: supportive
+}
+
+Tweet 37244112: RT @JohnMcC61971366 “Yeah, imagine that Josh. Imagine a strange, dark timeline where China is encircling the US with military bases and weapons of war. You know, in literally the exact same way the US is doing to China right now.” https://t.co/fhSpqURTvP
+
+This tweet implies that US has been threating China with wrongdoings. So the output is 
+
+{
+    ID: 7841341,
+    Sentiment: opposing
+}
+
+
+Now, it's your turn.

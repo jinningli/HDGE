@@ -1,0 +1,18 @@
+Given the following set of tweets (formatted in Tweet ID: Tweet), does the tweet have a positive or negative sentiment toward the topic on Enhanced Defense Cooperation Agreement (EDCA). For example, if the tweets mentions pro-Chinese military/political invasion then you should classify it as anti-EDCA (since EDCA is about US-Philippines alliance). Return your response in Json format.
+    {
+        "tweets": [
+            {
+                "ID": [INSERT TWEET_ID HERE],
+                "Sentiment": [INSERT SENTIMENT HERE]
+            },
+            {
+                "ID": [INSERT TWEET_ID HERE],
+                "Sentiment": [INSERT SENTIMENT HERE]
+            },
+            {
+                "ID": 1609574792490885123,
+                "Sentiment": [INSERT SENTIMENT HERE]
+            },
+            ...
+        ]
+    }

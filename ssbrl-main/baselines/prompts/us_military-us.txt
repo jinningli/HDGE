@@ -1,0 +1,41 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the United States on the topic of military and political stances. The tweet either has a pro-US, anti-US, or neutral stance on its military practice and political stances. In most of the cases, the tweet concerns U.S. versus China and Russia; you should classify sentiment from the U.S's perspective. For example, if the tweet has positive sentiment on U.S. or negative sentiment on Russia and China, then you should classify this tweet as "supportive", and vice versa. Keep in mind the United States' alliance with the Philippine, Japan, and Ukraine in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 37244112: RT @JohnMcC61971366 “Yeah, imagine that Josh. Imagine a strange, dark timeline where China is encircling the US with military bases and weapons of war. You know, in literally the exact same way the US is doing to China right now.” https://t.co/fhSpqURTvP
+
+This tweet implies that US has been threating China with wrongdoings. So the output is 
+
+{
+    ID: 37244112,
+    Sentiment: opposing
+}
+
+Tweet 12123219: RT @fo91041351 Democrats and Republicans scream about the threat'of Russia and China while the US military has guns pointed at the entire world. https://t.co/1OTbL3m5tp
+
+The sentiment towards the United States in this tweet is negative, criticizing the portrayal of external threats while highlighting the US military's global presence, so the output is:
+
+{
+    ID: 12123219,
+    Sentiment: opposing
+}
+
+Now, it's your turn.

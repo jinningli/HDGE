@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4ac7bc58-fbe5-4983-9684-1aa58b520a9e" name="incas1" url="http://incas.csl.illinois.edu">
+        <fileTransfer accessType="SFTP" host="incas.csl.illinois.edu" port="22" sshConfigId="8e5a8ac8-48fc-4393-b54d-da5bfadcdfdb" sshConfig="incas">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

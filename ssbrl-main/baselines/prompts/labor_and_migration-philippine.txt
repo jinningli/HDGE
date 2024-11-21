@@ -1,0 +1,41 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards Philippines on the topic of energy, manufacturing, or military. The tweet either has a pro-Philippines, anti-Philippines, or neutral stance on its labor and migration, or manufacturing practice. For example, in some cases, the tweet concerns Philippines versus China; you should classify sentiment from the Philippines's perspective. For example, if the tweet has positive sentiment on Philippines or negative sentiment on China, then you should classify this tweet as "supportive", and vice versa. Keep in mind the Philippines' alliance with the United States, Japan, and Ukraine in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 123134: RT @democracynow "Poor countries like the Philippines” will be “the biggest losers if the conflict escalates between the U.S. and China," says Filipino anti-imperialist activist Renato Reyes Jr. https://t.co/QS4DEwqueK
+
+The sentiment is opposing towards the Philippines, emphasizing its disadvantaged position in the US-China conflict. So the output is:
+
+{
+    ID: 1341231,
+    Sentiment: opposing
+}
+
+Tweet 4123112: RT @Bevin83994661 One of the most laughable arguments advanced by the US is that "China claims islets in the South China Sea TOO FAR from China's mainland to be valid". The US treats the Pacific Ocean as if it's an American lake!
+
+The sentiment towards the Philippines in this tweet cannot be directly determined as it mainly criticizes the US stance on China's territorial claims, without explicit reference to the Philippines. So the output is:
+
+{
+    ID: 4123112,
+    Sentiment: neutral
+}
+
+Now, it's your turn.

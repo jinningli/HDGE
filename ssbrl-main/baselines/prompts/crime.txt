@@ -1,0 +1,63 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the government on the topic of politics and crimes. If the tweet expresses a negtaive sentiment or comment on government (like criticizing the police, government policy, government control, or judiciary system), you should classify it as "opposing", (since it is anti-government). Similarly, if the tweet is pro-government, you should classify it as "supportive".
+
+In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @DonaldJTrumpJr Our corrupt elites aren't threatened by violent criminals on the streets because all of them have private security. They don't care if normal people are being terrorized. But they are threatened by Trump, which is why they're willing to turn us into a Banana Republic to stop him!
+
+
+The sentiment expressed towards the government and its elites in this tweet is negative, criticizing the government and elites' indifference to public safety, so the output is:
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+Tweet 434412: RT @KariLake Life is no longer safe down at our border The cartels are firmly in control. Not just in Mexico but in Arizona as well. That's why my top issue is to make sure that we secure our Border. And that's why the corrupt political machine is trying so hard to stop me. https://t.co/sIzjuBzJ6V
+
+The sentiment expressed towards the government in this tweet is negative, highlighting a failure to secure the border and suggesting political opposition to efforts to address the issue, so the output is:
+
+{
+    ID: 434412,
+    Sentiment: opposing
+}
+
+
+Tweet 652323: RT @bongbongmarcos We reiterate our commitment to an effective and substantive Code of Conduct in the South China Sea and commend the emerging consensus among ASEAN member-states to address the situation in Myanmar. The 42nd ASEAN Summit Retreat Session emphasized our collective efforts to foster… https://t.co/HPgUGuscGO
+
+The sentiment expressed towards government efforts in this tweet is positive, emphasizing a commitment to diplomacy and collaboration among ASEAN member-states regarding regional issues.
+
+{
+    ID: 652323,
+    Sentiment: supportive
+}
+
+Tweet 565235223: RT @Podolyak_M Putin (RF) is too predictable. Making a statement about tactical nuclear weapons in Belarus, he admits that he is afraid of losing & all he can do is scare with tactics... Second. He once again states his involvement in the crime. Violating the nuclear non-proliferation treaty...
+
+The sentiment expressed towards the government actions (specifically Putin's actions) in this tweet is negative, criticizing the use of scare tactics and implying a violation of international treaties.
+
+{
+    ID: 565235223,
+    Sentiment: opposing
+}
+
+Now, it's your turn.

@@ -1,0 +1,16 @@
+====================For GPT3====================
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_crime_labeled_merged.csv: 11
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_labor_and_migration-china_labeled_merged.csv: 3
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_energy-china_labeled_merged.csv: 10
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_us_military-philippine_labeled_merged.csv: 23
+Neutral Count of EDCA_filtered_data_10_5_5_20000_tree_vis_edca_labeled_merged.csv: 19
+Neutral Count of filtered_data_2_2_2_20000_tree_vis_insurgent-threats_labeled_merged.csv: 40
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_social_and_economic_issues_philippines_labeled_merged.csv: 11
+====================For GPT4====================
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_crime_labeled_merged_labeled.csv: 24
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_labor_and_migration-china_labeled_merged_labeled.csv: 6
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_energy-china_labeled_merged_labeled.csv: 12
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_us_military-philippine_labeled_merged_labeled.csv: 35
+Neutral Count of EDCA_filtered_data_10_5_5_20000_tree_vis_edca_labeled_merged_labeled.csv: 27
+Neutral Count of filtered_data_2_2_2_20000_tree_vis_insurgent-threats_labeled_merged_labeled.csv: 63
+Neutral Count of filtered_data_10_5_5_20000_tree_vis_social_and_economic_issues_philippines_labeled_merged_labeled.csv: 31

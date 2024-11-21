@@ -1,0 +1,54 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards Philippines and Philippines President Bongbong Marcos on the topic of demographics and politics. The tweet either has a pro-Marcos, anti-Marcos, or neutral stance on Marcos's political practice. In some of the cases, the tweet concerns Philippines versus China; you should classify sentiment from the Philippines's and Marcos' perspective. For example, if the tweet has positive sentiment on Philippines or negative sentiment on China, then you should classify this tweet as "supportive", and vice versa. Keep in mind the Philippines' alliance with the U.S. in your analysis. In the very rare case, there will be "neutral" views (for example, the tweet is simply stating a fact or news). The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+
+Tweet 2283840: RT @ricwe123 So this bullshit CNN reporter is on a US navy plane. Flying all the way to the South China Sea and starts complaining. "Why is this Chinese jet in such a close proximity" 😂😂😂😂 https://t.co/wSMpdXvWvQ
+
+The sentiment towards the Philippines in this tweet is not directly stated, focusing instead on criticizing media portrayal of a US-China encounter in the South China Sea. So the output is
+
+{
+    ID: 2283840,
+    Sentiment: neutral
+}
+
+
+Tweet 5730856: RT @BrianJBerletic China is the dominant force in the South CHINA Sea where it claims territory and its trade passes through, instead of the US which is 1000s of miles away and doesn't even reside in Asia. Can you spot a problem? Niether can I.
+
+This tweet has negative sentiment on Philippine because it stands with China and against U.S. So the output is 
+
+{
+    ID: 5730856,
+    Sentiment: opposing
+}
+
+
+Tweet 1936722: RT @spectatorindex BREAKING: The US calls on China to halt its 'provocative and unsafe' actions in the South China Sea after Chinese and Philippines ships nearly collided.
+
+This tweet stands with U.S and Philippines. So the output is
+
+{
+    ID: 1936722,
+    Sentiment: supportive
+}
+
+
+Now, it's your turn.

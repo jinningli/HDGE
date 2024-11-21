@@ -1,0 +1,21 @@
+{
+    "precision": 0.2,
+    "recall": 0.36363636363636365,
+    "f1": 0.39433838051349573,
+    "accuracy": 0.425,
+    "opposing_purity": 0.65,
+    "supportive_purity": 0.2,
+    "average_purity": 0.42500000000000004
+},
+{
+    "precision": 0.35,
+    "recall": 0.6363636363636364,
+    "f1": 0.5523370638578011,
+    "accuracy": 0.575,
+    "opposing_purity": 0.8,
+    "supportive_purity": 0.35,
+    "average_purity": 0.575
+},
+{
+    "running_time": 14.955346822738647
+}

@@ -1,0 +1,60 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards Russia on the topic of energy, manufacturing, or military. The tweet either has a pro-Russia, anti-Russia, or neutral stance on its energy, manufacturing, or military practice. In most of the cases, the tweet concerns Russia versus U.S; you should classify sentiment from the Russia's perspective. For example, if the tweet has positive sentiment on Russia or negative sentiment on U.S, then you should classify this tweet as "supportive", and vice versa. Keep in mind the Russia' alliance with the China in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 6265345: RT @PeImeniPusha An activist interrupted Blinken's speech, calling for negotiations with Russia because the U.S. is waging a dangerous proxy war. "If you don't like China's proposals, where are your peace proposals?" the woman asked. https://t.co/kZS6tkIUa6
+
+This tweet has supportive sentiment on Russia and China. So the output is 
+
+{
+    ID: 6265345,
+    Sentiment: supportive
+}
+
+
+Tweet 2141231312: RT @KimDotcom BREAKING: The US Congress oversight committee presents "new evidence of Biden family influence peddling" with large payments from middlemen who received money from Chinese entities for the Bidens. The US President, a money laundering pipeline terrorist and proxy war aficionado? https://t.co/wzxxkjp4dj
+
+This tweet has supportive sentiment on Russia and negative sentiment on the U.S and its president. So the output is 
+
+{
+    ID: 2141231312,
+    Sentiment: supportive
+}
+
+
+Tweet 523421: RT @gatewaypundit Now China and Germany Join Russia and Demand an Investigation Into Biden’s Connections with Nord Stream 2 Pipeline Sabotage https://t.co/QGiG26w1fd
+
+This tweet is not conerning with Russia and its energy or military pratices, so it is "neutral". The output is:
+
+{
+    ID: 523421,
+    Sentiment: neutral
+}
+
+Tweet 1009742: RT @KimDotcom All Russia and China have to do is the gradual de-dollarization of global trade with their BRICS+ partners and wait. No escalation. No overreaction to US provocations. Patience and time. Within 3 years the US Govt runs out of oxygen. Just listen and chill: https://t.co/lPOtJsghmm
+
+This tweet expresses positive sentiment on Russian and its alliance China, so it is "supportive." So the output is
+{
+    ID: 1009742,
+    Sentiment: supportive
+}
+
+Now, it's your turn.

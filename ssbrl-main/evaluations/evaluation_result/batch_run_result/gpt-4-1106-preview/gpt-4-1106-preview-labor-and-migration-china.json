@@ -1,0 +1,113 @@
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "accuracy": 0.75,
+    "opposing_purity": 0.75,
+    "supportive_purity": 0.75,
+    "average_purity": 0.75
+},
+{
+    "average_precision": 0.75,
+    "average_recall": 0.75,
+    "average_f1": 0.75,
+    "average_accuracy": 0.75,
+    "average_opposing_purity": 0.75,
+    "average_supportive_purity": 0.75,
+    "overall_average_purity": 0.75,
+    "average_run_time": 18.38833155632019
+},
+{
+    "average_precision": 0.75,
+    "average_recall": 0.75,
+    "average_f1": 0.75,
+    "average_accuracy": 0.75,
+    "average_opposing_purity": 0.75,
+    "average_supportive_purity": 0.75,
+    "overall_average_purity": 0.75,
+    "average_run_time": 18.38833155632019,
+    "f1_variance": 0.0,
+    "acc_variance": 0.0,
+    "purity_variance": 0.0
+}

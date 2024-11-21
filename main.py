@@ -1,5 +1,5 @@
 """
- python3 main.py --data_path /data/shared/incas/phase_2a/Competition/artifact/toolkit_2a_less_filter/investigate/defense_selected_labels.parquet --exp_name defence_10 --axis_guidance --edge_guidance --hidden2_dim 2 --label_types supportive,opposing --learning_rate 0.2 --label_sampling 1,1 --device 0 --seed 0
+ python3 main.py --exp_name test --data_path datasets/combined_data.csv --device 1 --seed 0
 """
 import os.path
 import pickle
@@ -10,7 +10,6 @@ import torch
 import argparse
 from pathlib import Path
 import numpy as np
-import scipy.sparse as sp
 import pandas as pd
 
 from dataset import BeliefDataset
@@ -22,7 +21,7 @@ parser = argparse.ArgumentParser()
 # General
 parser.add_argument('--epochs', type=int, default=1000, help='epochs (iterations) for training')
 parser.add_argument('--belief_warmup', type=int, default=200, help='epochs (iterations) for training')
-parser.add_argument('--learning_rate', type=float, default=0.02, help='learning rate of model')
+parser.add_argument('--learning_rate', type=float, default=0.2, help='learning rate of model')
 parser.add_argument('--device', type=str, default="cpu", help='cpu/gpu device')
 parser.add_argument('--num_process', type=int, default=40, help='num_process for pandas parallel')
 
@@ -31,13 +30,15 @@ parser.add_argument('--exp_name', type=str, help='exp_name to use', required=Tru
 parser.add_argument('--dataset', type=str, help='dataset to use')
 parser.add_argument('--data_path', type=str, default=None, help='specify the data path', required=True)
 parser.add_argument('--pos_weight_lambda', type=float, default=1.0, help='Lambda for positive sample weight')
+parser.add_argument('--save_freq', type=int, default=50, help='save_freq')
 
 # For GAE/VGAE model
 parser.add_argument('--polar_dim', type=int, default=2, help='polar_dim')
 parser.add_argument('--belief_dim', type=int, default=7, help='belief_dim')
 parser.add_argument('--hidden_dim', type=int, default=32, help='hidden_dim')
 parser.add_argument('--temperature', type=float, default=0.1, help='smaller for shaper softmax for belief separation')
-parser.add_argument('--lr_cooldown', type=float, default=0.1, help='lr cooldown for belief encoder')
+parser.add_argument('--belief_gamma', type=float, default=1.0, help='belief_gamma for weight of belief encoder loss')
+parser.add_argument('--lr_cooldown', type=float, default=0.5, help='lr cooldown for belief encoder')
 parser.add_argument('--seed', type=int, default=None)
 
 args = parser.parse_args()

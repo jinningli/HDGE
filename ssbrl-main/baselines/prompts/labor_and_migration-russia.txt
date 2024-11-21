@@ -1,0 +1,42 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards Russia on the topic of labor, migration, and military. The tweet either has a pro-Russia, anti-Russia, or neutral stance on its labor and migration, or manufacturing practice. For example, in some cases, the tweet concerns Russia versus United States and Ukraine; you should classify sentiment from the Russia's perspective. For example, if the tweet has positive sentiment on Russia or negative sentiment on United States, then you should classify this tweet as "supportive", and vice versa. Keep in mind the Russia' alliance with China in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 14131232: RT @GeoffYoung4KY Russia has every right to ban war criminals from entering their country. Barack Obama is a mass-murdering war criminal who escalated the illegal US proxy war against Russia, exactly like Joe Biden & Donald Trump. https://t.co/mFBUmdxiqF
+
+The sentiment towards Russia in this tweet is positive and supportive, supporting its right to ban individuals it views as war criminals and criticizing US policies, so the output is:
+
+{
+    ID: 14131232,
+    Sentiment: supportive
+}
+
+
+Tweet 12431901: RT @wallacemick Sadly Ukraine is just a pawn in the #US #NATO Proxy War as the Imperialists on both sides pursue their interests. Meanwhile the less privileged Ukrainians + Russians are dying for no good reason...
+
+This tweet expresses negative sentiment on US and NATO, hence supportive for Russia in our context. So the output is:
+
+{
+    ID: 12431901,
+    Sentiment: supportive
+}
+
+Now, it's your turn.

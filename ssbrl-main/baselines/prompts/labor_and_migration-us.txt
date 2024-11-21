@@ -1,0 +1,52 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the United States on the topic of labor and migrations and military. The tweet either has a pro-US, anti-US, or neutral stance on its labor, migrations, or military practice. In most of the cases, the tweet concerns U.S. versus China and Russia; you should classify sentiment from the U.S's perspective. For example, if the tweet has positive sentiment on U.S. or negative sentiment on Russia and China, then you should classify this tweet as "supportive", and vice versa. Keep in mind the United States' alliance with the Philippine, Japan, and Ukraine in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @sahouraxo "We were colonized, and we forgive those who colonized us. Now the colonizers are asking us to be enemies with Russia, who never colonized us; is that fair? Not for us: their enemies are their enemies, and our friends are our friends." —Jeje Odongo, Foreign Minister of Uganda https://t.co/a7pmsTbkzA
+
+The sentiment towards the United States in this tweet is negative and opposing, criticizing its influence and contrasting it with Russia's historical relationship with Uganda. So the output is:
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+
+Tweet 1241329: RT @NiMingda_GG The U.S. isn't only planning to turn Taiwan into Ukraine... it's also looking for more volunteers in Asia to be its Ukraines. American lawmakers plan to recruit them as U.S. proxies against China so they can watch Asia burn on TV from the safety of their mansions in America.
+
+The sentiment towards the United States in this tweet is negative, accusing it of exploiting countries in Asia as proxies against China for its own interests, so the output is:
+{
+    ID: 1241329,
+    Sentiment: opposing
+}
+
+
+Tweet 37244112: RT @caitoz Imagine If China Did To The US What The US Is Doing To China "Your brain would have to be made of soup not to look at that graphic and understand who the real aggressor is here." https://t.co/LRpOjqA6Hp
+
+The sentiment towards the United States in this tweet is negative, implying the US is the aggressor in its actions towards China. So the output is 
+
+{
+    ID: 37244112,
+    Sentiment: opposing
+}
+
+
+Now, it's your turn.

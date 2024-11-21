@@ -1,0 +1,6 @@
+Avergae running time for model GPT4: 99.45183399064202 seconds / topic.
+Avergae running time for model GPT3: 22.69182173462585 seconds / topic.
+Avergae running time for model GPT3: 240.9208378485271 seconds / topic.
+Avergae running time for model roberta_km: 12.253332614898682 seconds / topic.
+Avergae running time for model tweet_roberta_km: 12.208621229444232 seconds / topic.
+Avergae running time for model twhin_bert_km: 14.225605760301862 seconds / topic.

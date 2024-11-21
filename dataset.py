@@ -1,17 +1,9 @@
 import numpy as np
 import pandas as pd
-import scipy.sparse as sp
-import os
 import json
 import torch
-import pickle
-import itertools
 import random
-import pathlib
-import copy
 from collections import defaultdict, Counter
-from sklearn.metrics.pairwise import cosine_similarity
-import matplotlib.pyplot as plt
 
 import scipy.sparse as sp
 import matplotlib.pyplot as plt
@@ -113,7 +105,7 @@ class BeliefDataset:
         self.belief_dim = self.args.belief_dim
         self.polar_dim = self.args.polar_dim
         # Parameters
-        self.feature_builder = None
+        self.deduplicator = None
         self.user_label = []  # [] of pairs of (belief:str, polar:str) for each belief
         self.asser_label = []  # [] of pairs of (belief:str, polar:str) for each belief
         self.asser_list = []  # asserid to assert text
@@ -150,14 +142,14 @@ class BeliefDataset:
         print("Data Read Done")
         # Required Field: index_text, message_id, tweet_id, actor_id, text
         self.user_list = self.data.actor_id.unique().tolist()
-        self.feature_builder = Deduplicator(data=self.data)
-        self.feature_builder.build_index_mapping_only()
+        self.deduplicator = Deduplicator(data=self.data)
+        self.deduplicator.build_index_mapping_only()
         self.num_user = len(self.data["actor_id"].unique())
         self.num_assertion = len(self.data["index_text"].unique())
         self.num_nodes = self.num_user + self.num_assertion
         assert self.data is not None
-        assert len(self.feature_builder.asser2index) == self.num_assertion
-        assert len(self.feature_builder.user2index) == self.num_user
+        assert len(self.deduplicator.asser2index) == self.num_assertion
+        assert len(self.deduplicator.user2index) == self.num_user
         self.asser_label = [[] for _ in range(self.num_assertion)]
         self.asser_label_train = [[] for _ in range(self.num_assertion)]
         self.asser_list = [None for _ in range(self.num_assertion)]
@@ -169,7 +161,7 @@ class BeliefDataset:
             label = (item["belief"], item["manual_label"] if item["is_gt"] else None)
             label_train = (item["belief"], item["gpt_label"] if not item["is_gt"] else None)
             asser_text = item["index_text"]
-            asser_id = self.feature_builder.asser2index[asser_text]
+            asser_id = self.deduplicator.asser2index[asser_text]
             if self.asser_list[asser_id] is None:
                 self.asser_list[asser_id] = item["index_text"]
             if self.asser_list_tweet[asser_id] is None:
@@ -182,7 +174,7 @@ class BeliefDataset:
                 else:
                     self.asser_label[asser_id].append(label)
                     self.asser_label_train[asser_id].append(label_train)
-        num_user = len(self.feature_builder.user2index)
+        num_user = len(self.deduplicator.user2index)
         self.user_label = [None for _ in range(num_user)]
         user_label_candidate = [[] for _ in range(num_user)]
         for i, item in self.data.iterrows():
@@ -190,7 +182,7 @@ class BeliefDataset:
                 continue
             label = (item["belief"], item["manual_label"])
             user_name = item["actor_id"]
-            user_index = self.feature_builder.user2index[user_name]
+            user_index = self.deduplicator.user2index[user_name]
             if label[0] is not None and label[1] is not None:
                 user_label_candidate[user_index].append(label)
         for i in range(num_user):
@@ -213,9 +205,9 @@ class BeliefDataset:
         tweeting_matrix = np.zeros((num_user, num_assertion))
         for i, item in data.iterrows():
             index_text = item["index_text"]
-            tweet_index = self.feature_builder.asser2index[index_text]
+            tweet_index = self.deduplicator.asser2index[index_text]
             user_name = item["actor_id"]
-            user_index = self.feature_builder.user2index[user_name]
+            user_index = self.deduplicator.user2index[user_name]
             tweeting_matrix[user_index][tweet_index] += 1
         return tweeting_matrix
 
@@ -235,7 +227,7 @@ class BeliefDataset:
         self.data["semi_label"] = self.data.apply(lambda x: x["gpt_label"] if x["is_gt"] == 0 else np.nan, axis=1)
         if "label" not in self.data.columns and "gpt_label" not in self.data.columns:
             raise NotImplementedError("Warning: label is needed when doing semi-supervision. Will skip supervision now")
-        index = list(self.data["index_text"].apply(lambda x: self.feature_builder.asser2index[x]).unique())
+        index = list(self.data["index_text"].apply(lambda x: self.deduplicator.asser2index[x]).unique())
         if ratio < 1:
             sampled_size = int(len(index) * ratio)  # now percentage of semi_label we have
             if sampled_size > len(index):
@@ -252,8 +244,15 @@ class BeliefDataset:
             print(f"No label sampling: {len(index)} --> {len(index)} failed.")
             return None
 
+    # TODO when add more semi-supervision, bind it to the closest axis, instead of 0-axis
     def add_more_semi(self, additional_semi_data: list):
         self.semi_data.extend(additional_semi_data)
+        return self.update_semi_variables()
+
+    def add_more_semi_global_index(self, additional_semi_data: list):
+        # Attention, here, the additional_semi_data is index including user
+        for tup in additional_semi_data:
+            self.semi_data.append((tup[0] - self.num_user, tup[1], tup[2]))  # recover to asser index
         return self.update_semi_variables()
 
     def update_semi_variables(self):
@@ -367,9 +366,6 @@ class BeliefDataset:
         # Semi-Supervision
         print("Prepare variables for Semi-Supervision...")
         self.update_semi_variables()
-
-        # DEBUG
-        print(self.add_more_semi(self.random_sample_semi(0.1)))
 
         print("{} Processing Done. num_user: {}, num_assertion: {}".format(self.name, self.num_user, self.num_assertion))
 

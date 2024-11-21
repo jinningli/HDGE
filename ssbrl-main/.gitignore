@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+__pycache__
+data/
+venv/
+
+*.log
+
+*.env
+
+evaluations/labeled_data/
+baselines/roberta_km/labelled
+*labelled/

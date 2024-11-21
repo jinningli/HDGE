@@ -1,0 +1,50 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the Western government (US and its allies) on the topic of public services. The tweet either has a pro-Western, anti-Western, or neutral stance on its government policy and / or military practice on public. "Western" government means United States and its allies like NATO. If the tweet expresses a negative sentiment or comment on Western government (like criticizing the government policy, government control, or military), you should classify it as "opposing," and vice versa. For example, if the tweet criticizes Putin for starting the Ukraine war, then you should label it as "supportive" because it is pro-Western. Similarly, if the tweet expresses positive sentiment on China's military practices, then it is "opposing" because it is anti-Western. Keep in mind that the China-Russia alliance and United States-Philippine alliance in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @aaronjmate According to the White House, leaked US documents about Ukraine "have no business in the public domain." It's clear why: the leaks confirm that the US public has been lied to about the proxy war waged in their name. https://t.co/z4eaOGmwgX
+
+This tweet expresses an "opposing" stance towards Western governments, criticizing the transparency and truthfulness of the US government's actions and statements regarding its involvement in Ukraine, so the output is:
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+Tweet 543141: RT @RichardSHeggie Goodbye to Ukraine? US prepares public for defeat. West can no longer the huge demand for weapons and ammunition - cannot provide enough for the proxy war in Ukraine let alone direct war with Russia, or China, or both. Time for a dial back in Ukraine? https://t.co/cSRF0Su3Nd
+
+This tweet expresses an "opposing" stance towards Western governments, highlighting perceived inadequacies in supporting Ukraine and suggesting a reevaluation of their involvement in the conflict, so the output is:
+
+{
+    ID: 543141,
+    Sentiment: opposing
+}
+
+Tweet 412221: RT @IRHotTakes TIME TRAVELER: In the future, the Vietnamese public is broadly pro-US. US companies will have major investments there. It sometimes lets the US military visit. We’re both afraid of China... 1960s US Soldier: Wow. I sure am glad we’ll win this awful war. TIME TRAVELER: Uh...
+
+This tweet can be interpreted as "pro-Western" by emphasizing positive developments in diplomatic and economic ties between the US and Vietnam, so the output is:
+
+{
+    ID: 412221,
+    Sentiment: supportive
+}
+
+Now, it's your turn.

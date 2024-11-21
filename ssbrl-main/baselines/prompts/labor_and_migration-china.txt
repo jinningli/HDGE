@@ -1,0 +1,61 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards China on the topic of energy, manufacturing, or military. The tweet either has a pro-China, anti-China, or neutral stance on its labor and migration, or manufacturing practice. In most of the cases, the tweet concerns China versus U.S; you should classify sentiment from the China's perspective. For example, if the tweet has positive sentiment on China or negative sentiment on U.S., then you should classify this tweet as "supportive", and vice versa. Keep in mind the United States' alliance with the Philippine, Japan, and Ukraine in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 1341231: RT @ClareDalyMEP Shameful displays of colonial arrogance towards China should be left in the past. The issue is simple. Do we want to be a vassal of our Atlantic friends, or have peaceful, independent relations with our largest trading partner, which hasn't dropped a bomb on anyone in 40 years? https://t.co/9hfs4CuikR
+
+
+The sentiment towards China in this tweet is positive, criticizing Western arrogance and advocating for peaceful, independent relations with China, highlighting its non-aggressive recent history. So the output is:
+
+{
+    ID: 1341231,
+    Sentiment: supportive
+}
+
+
+Tweet 38910232: RT @caitoz Imagine If China Did To The US What The US Is Doing To China "Your brain would have to be made of soup not to look at that graphic and understand who the real aggressor is here." https://t.co/LRpOjqA6Hp
+
+The sentiment towards China in this tweet is positive, implying China is not the aggressor in comparison to the US's actions, suggesting sympathy or support for China. So the output is:
+
+{
+    ID: 38910232,
+    Sentiment: supportive
+}
+
+Tweet 3412314: RT @SpiritofHo The U.S. doesn't belong in the South China Sea. It has no right to lecture China on the South *China* Sea.
+
+The sentiment towards China in this tweet is positive, criticizing the U.S. presence in the South China Sea and supporting China's stance on the issue. So teh output is:
+
+{
+    ID: 3412314,
+    Sentiment: supportive
+}
+
+Tweet 12413083: RT @Kanthan2030 The impressive "China Model" that emerged as the clear winner in the last 20 years.👇 Western neoliberalism has languished. And they have no explanation other than crying, "But we have freedom and democracy." The fake logic here is, of course, that somehow freedom and democracy… https://t.co/B9oSyRoaN2
+
+The tweet has obvious positive sentiments for China's economic performance, so this tweet is "supportive". So the output is 
+
+{
+    ID: 12413083,
+    Sentiment: supportive
+}
+
+Now, it's your turn.

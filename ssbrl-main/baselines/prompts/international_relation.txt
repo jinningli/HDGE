@@ -1,0 +1,51 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the Western government on the topic of international relations. The tweet either has a pro-Western, anti-Western, or neutral stance on its government policy and / or military practice on international relations. "Western" government means countries like United States and its allies like NATO. If the tweet expresses a negative sentiment or comment on Western government (like criticizing the government policy, government control, or military), you should classify it as "opposing," and vice versa. For example, if the tweet criticizes Putin for starting the Ukraine war, then you should label it as "supportive" because it is pro-Western. Similarly, if the tweet expresses positive sentiment on China's military practices, then it is "opposing" because it is anti-Western. Keep in mind that the China-Russia alliance and United States-Philippine alliance in your analysis. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @REVMAXXING Russia is the most sanctioned country on earth. Russia is surrounded by dozens of US and NATO military bases. Russia is now engaged in a conflict in Ukraine precipitated by NATO. But the lying West wants you to think that this is “Putin’s” war
+
+
+This tweet expresses an "opposing" stance towards Western governments, criticizing their narrative and military presence around Russia, implying they have a role in escalating the conflict in Ukraine, so the output is:
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+Tweet 43123843: RT @bobitiglao Will EDCA stop Chinese 'intrusions' into PH waters? https://t.co/Bbwnm4zp9j
+
+This tweet seems neutral or questioning, seeking to evaluate the effectiveness of the Enhanced Defense Cooperation Agreement (EDCA) against Chinese actions in Philippine waters without explicitly supporting or opposing Western government policy. The output is:
+
+{
+    ID: 43123843,
+    Sentiment: neutral
+}
+
+Tweet 5324231: RT @ricwe123 "NATO dropped 15 tons of depleted uranium bombs on Yugoslavia causing death and agony to linger for generations after the war. In Serbia after 1999, many children suffered from tumors and 366 participating NATO Italian military personnel died of cancer" -Zhao Lijian,China https://t.co/dhIHKs5UxJ
+
+This tweet expresses an "opposing" stance towards Western governments, specifically criticizing NATO's military practices and their long-term health consequences on civilians and military personnel, so the output is:
+
+{
+    ID: 5324231,
+    Sentiment: opposing
+}
+
+Now, it's your turn.

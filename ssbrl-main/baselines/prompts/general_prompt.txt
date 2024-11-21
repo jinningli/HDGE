@@ -1,0 +1,64 @@
+Given a collection of tweets, independently analyze each tweet to determine whether it expresses a "supportive" or "opposing" stance towards Western countries, encompassing democratic nations like the United States, NATO members, Ukraine, the Philippines, Taiwan, etc. Each tweet can convey either a pro-Western, anti-Western, or neutral perspective on various aspects of Western governmental, political, military, domestic, or related practices.
+
+Most tweets comment on Western versus Eastern countries, with Western countries being democratic countries such as United States, NATO, Philippines, Taiwan, etc, and Eastern countries being totalitarian countries such as Russia and China. Evaluation should be based on sentiment from the perspective of Western countries. For example, tweets showing positive sentiment towards Western nations or negative sentiment towards Eastern nations should be classified as 'supportive', while the opposite would be categorized as 'opposing'. Instances of 'neutral' viewpoints are expected to be rare. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @upholdreality Col. DOUGLAS MACGREGOR: "China did not rob us of our manufacturing base, we robbed ourselves of it. Greedy people in Washington and the corporate sector shipped those things out. This is what people need to get in their heads: stop looking overseas for someone to blame for the… https://t.co/MJ24L9EuCv
+
+This tweet has negative sentiment on U.S because it is blaming U.S for its loss of jobs and manufacturing bases. So the output is 
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+
+Tweet 5324231: RT @ricwe123 "NATO dropped 15 tons of depleted uranium bombs on Yugoslavia causing death and agony to linger for generations after the war. In Serbia after 1999, many children suffered from tumors and 366 participating NATO Italian military personnel died of cancer" -Zhao Lijian,China https://t.co/dhIHKs5UxJ
+
+This tweet expresses an "opposing" stance towards Western governments, specifically criticizing NATO's military practices and their long-term health consequences on civilians and military personnel, so the output is:
+
+{
+    ID: 5324231,
+    Sentiment: opposing
+}
+
+Tweet 7841341: RT @BreitbartNews A group of eight House Republicans joined the majority of Democrats to support Biden’s suspension of United States tariffs on suspected China-made solar panels. https://t.co/uZZWrNOeHJ
+
+This tweet has relatively positive sentiment on U.S for how Republicans is supporting the democratic U.S president. So the output is 
+
+{
+    ID: 7841341,
+    Sentiment: supportive
+}
+
+
+Tweet 543141: RT @blackintheempir China won and they did it without coups, sanctions, assassinations, invasions and bullying and on top of that they've managed to improve life in their country over the past few decades, unlike the United States.
+
+This tweet expresses an "opposing" stance towards Western governments, criticizing their foreign policy methods and comparing them unfavorably to China's approach and domestic achievements, so the output is:
+
+{
+    ID: 543141,
+    Sentiment: opposing
+}
+
+
+Now, it's your turn.

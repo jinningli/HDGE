@@ -1,0 +1,41 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards the Western countries (including the United States, NATO, Philippines) on the topic of defense and military. The tweet either has a pro-Western, anti-Western (Anti-Russia or Anti-China), or neutral stance on its defense and military practice. In most of the cases, the tweet concerns Western versus China and Russia; you should classify sentiment from the Western's perspective. For example, if the tweet has positive sentiment on Western countries or negative sentiment on Russia and China, then you should classify this tweet as "supportive", and vice versa. In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @BenjaminNorton A group of anti-war US veterans - including a dozen former military officers ranked as high as general - published an ad in the NY Times calling to halt arms shipments to Ukraine and end the war with peace talks They included this graphic of NATO military bases surrounded Russia https://t.co/m9Ntrnjrgs
+
+The sentiment towards NATO in this tweet is negative, highlighting opposition to arms shipments to Ukraine and suggesting NATO's military presence as aggressive towards Russia, so the output is:
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+Tweet 218312: RT @GarlandNixon The US literally used a military exercise which simulated protecting NATO countries from a Russian attack..... to carry out a military attack against a NATO country... no irony here
+
+The sentiment towards NATO in this tweet is negative, criticizing the US for using a NATO defense exercise as a pretext for an attack against a NATO member, highlighting irony and hypocrisy, so the output is
+
+{
+    ID: 218312,
+    Sentiment: opposing
+}
+
+Now, it's your turn.

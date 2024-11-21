@@ -1,0 +1,15 @@
+I have two sets of tweets, denoted as [Set 1] and [Set 2], both discussing the topic of [REPLACE]. The tweets in each set are known to have similar opinions about this topic. I need to determine if these sets have polarized views. For this analysis, 'polarized' means they convey opposing views or different perspectives on [REPLACE], such as 'anti-US military' versus 'anti-China military'.
+
+Please follow these steps:
+1. Analyze both sets of tweets to determine if the arguments exhibit explicitly opposing or consistent viewpoints. Note: Only classify as polarized if there are obvious opposite stances or completely different perspectives on the same topic.
+
+2. Provide the final analysis in this JSON format::
+    {
+
+        "polarized": True/False (True if they have conflicting and opposing views on [REPLACE], False if they have consistent or implict standpoints),
+        "polarity_score": ranges from 0 to 1, where 0 represents [Set 1] and [Set 2] have consistent views, and 1 represents completely polarized (opposing) views.
+    }
+
+Please consider any data limitations and focus on identifying clear and explicit opposition in views, not just minor differences or variations in perspective. Only return the response in json object specified in step 4.
+
+Perform the above steps on the following [Set 1] and [Set 2]:

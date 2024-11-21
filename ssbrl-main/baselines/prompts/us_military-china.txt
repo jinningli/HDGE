@@ -1,0 +1,53 @@
+Given a set of tweets, independently determine if each of them expresses a supportive or opposing stance towards China on the topic of manufacturing and military. The tweet either has a pro-China, anti-china, or neutral stance on its military practice. Classify each tweet's sentiment as either "supportive" for China or "opposing" against China. In most of the cases, the tweet concerns China versus U.S; you should classify sentiment from the China's perspective. For example, if the tweet has positive sentiment on China or negative sentiment on United States, then you should classify this tweet as "supportive". In the very rare case, there will be "neutral" views. The expected response format is an array of JSON objects as follows:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE]
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2093614: RT @Constanze2022 A few days ago, the Chinese discovered that the US military was using tents from China. Only now it turned out these tents are from a humanitarian convoy that China sent to Syria. The Americans are not only stealing oil from Syria, but also humanitarian aid. https://t.co/9zSG3dwR6v
+
+The sentiment towards China in this tweet is positive and supportive, highlighting China's humanitarian efforts and criticizing the US for allegedly misusing aid intended for Syria, so the output is:
+
+{
+    ID: 2093614,
+    Sentiment: supportive
+}
+
+
+Tweet 4630522: RT @CheburekiMan While the U.S. was blowing almost a trillion per year on a military that can't conquer a nation of goat-herders in sandals, China was investing heavily in world class infrastructure. https://t.co/OVqgn1jn4L
+
+The sentiment towards China in this tweet is positive, praising its investment in infrastructure as opposed to criticizing the U.S. military expenditure, so the output is 
+
+{
+    ID: 4630522,
+    Sentiment: supportive
+}
+
+
+Tweet 6265345: RT @AndyBxxx THE U.S. IS A DICK: The U.S. Air Force has been flying a Boeing RC-135U spy plane right up against the east coast of China today. In times of tension and while the world is on edge, what is the freaking point? And the Western media’ll still say it’s China being “aggressive.” https://t.co/keFWaML8dZ
+
+From China's perspective, the sentiment in this tweet is supportive, criticizing the U.S. for its military actions near China and challenging the portrayal of China as "aggressive" by Western media, so the output is 
+
+{
+    ID: 6265345,
+    Sentiment: supportive
+}
+
+
+Now, it's your turn.

@@ -1,0 +1,50 @@
+Given a collection of tweets, your task is to determine whether each tweet expresses a supportive or opposing stance towards Western governments, primarily the United States and its allies, concerning insurgent threats. Each tweet should be classified as either pro-Western, anti-Western, or neutral in its perspective on government policies and military practices related to insurgent threats. If a tweet exhibits negative sentiment or criticism towards Western governments, including their policies, control, or military actions, classify it as "opposing". Conversely, if the tweet shows support or positivity towards Western governments, label it as "supportive." For instance, if a tweet criticizes Putin for initiating the Ukraine conflict, classify it as "supportive" due to its pro-Western stance. Conversely, if a tweet praises China's military actions, it should be categorized as "opposing" because it reflects an anti-Western viewpoint. Keep in mind geopolitical alliances such as the China-Russia partnership and the United States-Philippines alliance when analyzing tweets. Provide the analysis results in the form of an array of JSON objects, each containing the tweet ID and its corresponding stance classification like the following:
+
+{
+    "tweets": [
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": [INSERT TWEET_ID HERE],
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        {
+            "ID": 1609574792490885123,
+            "Sentiment": [INSERT SENTIMENT HERE] (Either "opposing", "supportive", or "neutral")
+        },
+        ...
+    ]
+}
+
+Here are some examples:
+
+Tweet 2182412: RT @NiMingda_GG But don't worry. None of that will happen if the U.S. minds its own business. However, if the U.S. insists on provoking a conflict with China, then the American ruling elites will only have themselves to blame when war & destruction visit the U.S. homeland.
+
+This tweet expresses an "opposing" stance towards the U.S. government, suggesting that U.S. provocation towards China could lead to negative consequences, implying criticism of U.S. foreign policy and actions regarding insurgent threats.
+
+{
+    ID: 2182412,
+    Sentiment: opposing
+}
+
+Tweet 543141: RT @blackintheempir China won and they did it without coups, sanctions, assassinations, invasions and bullying and on top of that they've managed to improve life in their country over the past few decades, unlike the United States.
+
+This tweet expresses an "opposing" stance towards Western governments, criticizing their foreign policy methods and comparing them unfavorably to China's approach and domestic achievements, so the output is:
+
+{
+    ID: 543141,
+    Sentiment: opposing
+}
+
+Tweet 412221: RT @NiMingda_GG 4/ The majority of the world's population is rebelling against the Anglo-American Empire & its racist, exploitative “rules-based international order”. They're simply expressing that rebellion by supporting Russia against the U.S./West which is using Ukraine as a shield.
+
+This tweet expresses an "opposing" stance towards Western governments, criticizing the Anglo-American influence and their international policies, and highlighting global support for Russia as a form of rebellion against these practices, so the output is:
+
+{
+    ID: 412221,
+    Sentiment: opposing
+}
+
+Now, it's your turn.
